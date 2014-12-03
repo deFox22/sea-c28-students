@@ -61,3 +61,21 @@ while True:
         break
     else:
         print (u"That fruit is not in the list. Pick again.")
+# Section 3
+fruits3 = fruits1[:]
+# Ask the user for input displaying a line like "Do you like Apples?".
+# For each fruit(make all lowercase). Each "no", delete that fruit
+# For any answer other than "yes" or "no", prompt user again
+for fruit in fruits3[:]:
+    while True:
+        user_likes = raw_input(u"Do you like %s? "
+                               "yes or no -> " % fruit.lower())
+        if user_likes == "no":
+            fruits3.remove(fruit)
+            break
+        elif user_likes != "yes":
+            print (u"Please answer with yes or no. Try again.")
+        else:
+            break
+# Display the list
+print (fruits3)
