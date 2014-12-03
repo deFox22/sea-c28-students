@@ -39,3 +39,25 @@ print (fruits1)
 for fruit in fruits1:
     if fruit[0] == "P":
         print (fruit)
+# Section 2
+fruits2 = fruits1[:]
+# Display the list
+print (fruits2)
+# Remove the last fruit from the list
+fruits2.remove(fruits2[-1])
+# Display the list
+print (fruits2)
+# Ask the user for a fruit to delete and find it and delete it.
+# Bonus multiply list times 2. Keep asking until a match is found.
+# Once found, delete all occurances.
+fruits2 = fruits2 * 2
+while True:
+    user_fruit_delete = unicode(raw_input(u"Which fruit type would "
+                                          "you like to delete? -> "))
+    if user_fruit_delete.title() in fruits2:
+        for fruit in fruits2:
+            if fruit == user_fruit_delete.title():
+                fruits2.remove(fruit)
+        break
+    else:
+        print (u"That fruit is not in the list. Pick again.")
