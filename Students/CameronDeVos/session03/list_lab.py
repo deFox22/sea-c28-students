@@ -79,3 +79,13 @@ for fruit in fruits3[:]:
             break
 # Display the list
 print (fruits3)
+
+# Section 4
+# Make a copy of the list and reverse the letters in each fruit in the copy.
+fruits4 = fruits1[:]
+for spot, fruit in enumerate(fruits1[:]):
+    fruits4[spot] = fruit[::-1]
+# Delete the last item of original list. Display the original list and copy.
+fruits1.remove(fruits1[-1])
+print (fruits1)
+print (fruits4)
