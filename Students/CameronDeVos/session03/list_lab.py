@@ -39,6 +39,7 @@ print (fruits1)
 for fruit in fruits1:
     if fruit[0] == "P":
         print (fruit)
+
 # Section 2
 fruits2 = fruits1[:]
 # Display the list
@@ -61,6 +62,7 @@ while True:
         break
     else:
         print (u"That fruit is not in the list. Pick again.")
+
 # Section 3
 fruits3 = fruits1[:]
 # Ask the user for input displaying a line like "Do you like Apples?".
