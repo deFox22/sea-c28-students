@@ -18,3 +18,24 @@ while True:
         print(u"That fruit is already in the list. Pick again.")
 # Display the list
 print (fruits1)
+# Ask the user for a number and display the number back to the user and
+# the fruit corresponding to that number (on a 1-is-first basis).
+while True:
+    user_number = int(raw_input(u"Pick a number between 1 "
+                                "and %s. ->" % len(fruits1)))
+    if user_number <= len(fruits1) and user_number >= 1:
+        print (u"The fruit at spot %s "
+               "is %s." % (user_number, fruits1[(user_number)-1]))
+        break
+    else:
+        print (u"That is an invalid answer. Pick again.")
+# Add another fruit to the beginning of the list using "+" and display list.
+fruits1 = [u"Plums"] + fruits1
+print (fruits1)
+# Add another fruit to the beginning of the list using insert and display list.
+fruits1.insert(0, u"Mangos")
+print (fruits1)
+# Display all the fruits that begin with "P", using a for loop.
+for fruit in fruits1:
+    if fruit[0] == "P":
+        print (fruit)
