@@ -32,7 +32,7 @@ def rot13_longencrypt(text):
             code = code + character
     return code
 
-# Test both functions for whitespace, punctuation, and capitalization
+# Test functions for whitespace, punctuation, and capitalization
 if __name__ == '__main__':
     assert rot13_encrypt("hello") == "uryyb"
     assert rot13_encrypt("I'm m@king Cookies!") == "V'z z@xvat Pbbxvrf!"
