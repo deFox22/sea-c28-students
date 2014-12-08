@@ -21,3 +21,12 @@ print (dictionary1.values())
 print (u'cake' in dictionary1)
 # Display whether or not "Mango" is a value in the dictionary
 print (u'Mango' in dictionary1.values())
+
+# Section 2
+# Use dict constructor and zip to build a dictionary of numbers
+# from 0 to 15 and the hexadecimal equivalent
+nums = (range(16))
+hexs = (u'0', u'1', u'2', u'3', u'4', u'5', u'6', u'7',
+        u'8', u'9', u'a', u'b', u'c', u'd', u'e', u'f', u'g')
+newdict = dict(zip(nums, hexs))
+print (newdict)
