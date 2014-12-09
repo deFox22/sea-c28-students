@@ -88,7 +88,8 @@ def thank_you_name():
 def thank_you_amount(name):
     amount = None
     while amount is None:
-        amount = safe_input(u"What is the donation amount?\n--->  ")
+        amount = safe_input(u"To return to the main menu type 'q'"
+                            "What is the donation amount?\n--->  ")
         if amount == u"q":
             main_menu()
         elif float_check(amount) is False or amount.startswith('-'):
