@@ -102,7 +102,28 @@ def thank_you_amount(name):
             print (donorbase)
             compose_email(name, amount)
 
+
 def compose_email(name, amount):
     print (u"Thank you for your donation, %s, in\n"
            " the amount of %.2f" % (name, amount))
+    main_menu()
+
+
+def create_report():
+    donor_data = []
+    for i, name in enumerate(donorbase):
+        donor_data.append([name])
+        total_donated = round(sum(donorbase[name]), 2)
+        donor_data[i].append(total_donated)
+        donation_count = len(donorbase[name])
+        donor_data[i].append(donation_count)
+        average_donation = round((total_donated/donation_count), 2)
+        donor_data[i].append(average_donation)
+    donor_data.sort(key=lambda x: x[1], reverse=True)
+    print ("\n{:<16} {:<12} {:<12} "
+           "{:<12}".format("Name", "Total", "Donations", "Average"))
+    for name in donor_data:
+        print ("{:<16} {:<12} {:<12} "
+               "{:<12}".format(name[0], "{:.2f}".format(name[1]), name[2],
+                               "{:.2f}".format(name[3])))
     main_menu()
