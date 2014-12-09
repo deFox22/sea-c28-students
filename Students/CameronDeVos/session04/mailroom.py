@@ -63,11 +63,12 @@ def main_menu():
             print (u'Sorry that is an invalid answer')
             main_menu()
 
+
 def thank_you_name():
     name = None
     while name is None:
         name = safe_input(u"What is the full name of the donor?\nTo see "
-                          "a list of previous donors type 'list'"
+                          "a list of previous donors type 'list'\n"
                           "To quit the task type 'q'"
                           "\n--->  ")
         if name == u"list":
@@ -105,8 +106,8 @@ def thank_you_amount(name):
 
 
 def compose_email(name, amount):
-    print (u"Thank you for your donation, %s, in\n"
-           " the amount of %.2f" % (name, amount))
+    print (u"\nThank you %s for your generous donation in\n"
+           " the amount of %.2f\n" % (name, amount))
     main_menu()
 
 
