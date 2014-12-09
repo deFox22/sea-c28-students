@@ -34,3 +34,30 @@ def create_trigrams(words):
         else:
             trigrams[key] = [value]
     return trigrams
+
+
+def write_story(trigrams):
+    u"""Return a new story from the dictionary of trigrams"""
+    new_story = ""
+    random_key = random.choice(trigrams.keys())
+    current_word = (random_key[0], random_key[1])
+    last_word = random_key[1]
+    new_story += ' {0} {1}'.format(random_key[0], random_key[1])
+    for i in range(story_length(sherlock_data)):
+        if current_word in trigrams.keys():
+            # Pull values for key with last 2 words
+            value_picklist = trigrams[current_word]
+            # Pick value at random
+            random_value = random.choice(value_picklist)
+            # Add value to story
+            if str(random_value).istitle():
+                new_story += '. {0}'.format(random_value)
+            else:
+                new_story += ' {0}'.format(random_value)
+            # Update current word key to match last 2 words of story
+            last_word = current_word[1]
+            current_word = (last_word, random_value)
+        else:
+            new_story += (u". The End!")
+            break
+    return new_story
