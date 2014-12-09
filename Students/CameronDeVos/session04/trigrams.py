@@ -16,3 +16,8 @@ def create_word_list(txtfile):
         word = word.strip(string.punctuation + string.whitespace)
         words.append(word)
     return words
+
+
+def story_length(words):
+    u"""Return the count of words from the input word list"""
+    return len(create_word_list(words))
