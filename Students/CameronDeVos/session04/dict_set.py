@@ -43,3 +43,27 @@ for key, value in dictionary1.items():
             count += 1
     dictionary2[key] = count
 print (dictionary2)
+
+# Section 4
+# Create sets s2, s3, and s4 that contain numbers
+# from zero to 20, divisible 2,3, and 4
+
+
+def divisible_set(nums, divisor):
+    alist = []
+    for num in range(nums):
+        if num % divisor == 0:
+            alist.append(num)
+    return set(alist)
+
+s2 = divisible_set(21, 2)
+s3 = divisible_set(21, 3)
+s4 = divisible_set(21, 4)
+# Display the sets
+print (s2)
+print (s3)
+print (s4)
+# Display if s3 is a subset of s2
+print (s3.issubset(s2))
+# Display if s4 is a subset of s2
+print (s4.issubset(s2))
