@@ -101,3 +101,8 @@ def thank_you_amount(name):
             update_donor(name, amount)
             print (donorbase)
             compose_email(name, amount)
+
+def compose_email(name, amount):
+    print (u"Thank you for your donation, %s, in\n"
+           " the amount of %.2f" % (name, amount))
+    main_menu()
