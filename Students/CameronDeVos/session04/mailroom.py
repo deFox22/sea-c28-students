@@ -11,3 +11,11 @@ def safe_input(prompt):
         return safe_input(prompt)
     else:
         return unicode(response)
+
+
+def float_check(amount):
+    try:
+        float(amount)
+        return True
+    except ValueError:
+        return False
