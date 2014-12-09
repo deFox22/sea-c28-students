@@ -67,3 +67,13 @@ print (s4)
 print (s3.issubset(s2))
 # Display if s4 is a subset of s2
 print (s4.issubset(s2))
+
+# Section 5
+# Create a set with the letters in 'Python' and add 'i' to the set
+spy = set([u'P', u'y', u't', u'h', u'o', u'n'])
+spy.add(u'i')
+# Create a frozenset with the letters in 'marathon'
+fs = frozenset((u'm', u'a', u'r', u'a', u't', u'h', u'o', u'n'))
+# display the union and intersection of the two sets
+print (spy.union(fs))
+print (spy.intersection(fs))
