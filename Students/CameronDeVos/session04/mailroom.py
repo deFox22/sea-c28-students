@@ -7,7 +7,7 @@ def safe_input(prompt):
     try:
         response = raw_input(prompt)
     except (EOFError, KeyboardInterrupt):
-        print (u"Sorry, unable to preform that action")
+        print (u"Sorry, unable to preform that action.")
         return safe_input(prompt)
     else:
         return unicode(response)
@@ -52,36 +52,36 @@ def main_menu():
                            "To exit type 'q'\n"
                            "--->  ")
         if reply == 'q':
-            print (u"Exiting the script")
+            print (u"Exiting the script...")
         elif reply == '1':
-            print (u'Thank You Creation Wizard:')
+            print (u'\nThank You Creation Wizard:')
             thank_you_name()
         elif reply == '2':
-            print (u'creating report....')
+            print (u'Creating report...')
             create_report()
         else:
-            print (u'Sorry that is an invalid answer')
+            print (u'Sorry that is an invalid answer.')
             main_menu()
 
 
 def thank_you_name():
     name = None
     while name is None:
-        name = safe_input(u"What is the full name of the donor?\nTo see "
-                          "a list of previous donors type 'list'\n"
-                          "To quit the task type 'q'"
+        name = safe_input(u"\nWhat is the full name of the donor?"
+                          "\nTo see a list of previous donors type 'list'"
+                          "\nTo quit the task type 'q'"
                           "\n--->  ")
         if name == u"list":
             print_names(donorbase)
             thank_you_name()
         elif name in donorbase.keys():
-            print (u"%s has been found in the donorbase" % name)
+            print (u"%s has been found in the donorbase." % name)
             thank_you_amount(name)
         elif name == u"q":
-            print (u"returning to main menu")
+            print (u"Returning to main menu...")
             main_menu()
         else:
-            print (u"%s has been added to the donorbase" % name)
+            print (u"%s has been added to the donorbase." % name)
             add_donor(name)
             thank_you_amount(name)
 
@@ -89,12 +89,13 @@ def thank_you_name():
 def thank_you_amount(name):
     amount = None
     while amount is None:
-        amount = safe_input(u"To return to the main menu type 'q'"
-                            "What is the donation amount?\n--->  ")
+        amount = safe_input(u"\nWhat is the donation amount?"
+                            "\nTo return to the main menu type 'q'."
+                            "\n--->  ")
         if amount == u"q":
             main_menu()
         elif float_check(amount) is False or amount.startswith('-'):
-            print (u"Please enter a valid or positive number")
+            print (u"Please enter a valid or positive number.")
             thank_you_amount(name)
         else:
             amount = round(float(amount), 2)
@@ -107,7 +108,7 @@ def thank_you_amount(name):
 
 def compose_email(name, amount):
     print (u"\nThank you %s for your generous donation in\n"
-           " the amount of %.2f\n" % (name, amount))
+           " the amount of $%.2f.\n\n--SavePenguins charity" % (name, amount))
     main_menu()
 
 
