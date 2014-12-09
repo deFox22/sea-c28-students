@@ -62,3 +62,24 @@ def main_menu():
         else:
             print (u'Sorry that is an invalid answer')
             main_menu()
+
+def thank_you_name():
+    name = None
+    while name is None:
+        name = safe_input(u"What is the full name of the donor?\nTo see "
+                          "a list of previous donors type 'list'"
+                          "To quit the task type 'q'"
+                          "\n--->  ")
+        if name == u"list":
+            print_names(donorbase)
+            thank_you_name()
+        elif name in donorbase.keys():
+            print (u"%s has been found in the donorbase" % name)
+            thank_you_amount(name)
+        elif name == u"q":
+            print (u"returning to main menu")
+            main_menu()
+        else:
+            print (u"%s has been added to the donorbase" % name)
+            add_donor(name)
+            thank_you_amount(name)
