@@ -30,3 +30,16 @@ hexs = (u'0', u'1', u'2', u'3', u'4', u'5', u'6', u'7',
         u'8', u'9', u'a', u'b', u'c', u'd', u'e', u'f', u'g')
 newdict = dict(zip(nums, hexs))
 print (newdict)
+
+# Section 3
+# Use the dict from section 1 to make a dict
+# using the same keys but with the # of a's in each value
+# TODO Shorten
+dictionary2 = {}
+for key, value in dictionary1.items():
+    count = 0
+    for letter in value:
+        if letter == u'a':
+            count += 1
+    dictionary2[key] = count
+print (dictionary2)
