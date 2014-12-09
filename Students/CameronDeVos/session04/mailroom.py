@@ -127,3 +127,6 @@ def create_report():
                "{:<12}".format(name[0], "{:.2f}".format(name[1]), name[2],
                                "{:.2f}".format(name[3])))
     main_menu()
+
+if __name__ == "__main__":
+    main_menu()
