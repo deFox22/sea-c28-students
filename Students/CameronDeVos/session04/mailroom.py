@@ -83,3 +83,21 @@ def thank_you_name():
             print (u"%s has been added to the donorbase" % name)
             add_donor(name)
             thank_you_amount(name)
+
+
+def thank_you_amount(name):
+    amount = None
+    while amount is None:
+        amount = safe_input(u"What is the donation amount?\n--->  ")
+        if amount == u"q":
+            main_menu()
+        elif float_check(amount) is False or amount.startswith('-'):
+            print (u"Please enter a valid or positive number")
+            thank_you_amount(name)
+        else:
+            amount = round(float(amount), 2)
+            print ("made it here")
+            print (amount)
+            update_donor(name, amount)
+            print (donorbase)
+            compose_email(name, amount)
