@@ -61,3 +61,12 @@ def write_story(trigrams):
             new_story += (u". The End!")
             break
     return new_story
+
+sherlock.close()
+
+if __name__ == '__main__':
+
+    word_list = create_word_list(sherlock_data)
+    trigrams = create_trigrams(word_list)
+    new_story = write_story(trigrams)
+    print (new_story)
