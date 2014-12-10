@@ -44,3 +44,6 @@ threeset = [{}, {}, {}]
 for x in range((len(threeset))):
     threeset[x] = {i for i in range(21) if i % (x+2) == 0}
 print (u"threeset: {0}\n".format(threeset))
+# extra credit if done with a set comprehension inside a list comprehension
+extra_credit = [{i for i in range(21) if i % (x+2) == 0} for x in range(3)]
+print (u"extra credit: {0}".format(extra_credit))
