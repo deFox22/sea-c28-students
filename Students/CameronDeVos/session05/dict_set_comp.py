@@ -27,3 +27,14 @@ print (u"hexidict2 {0}\n".format(hexidict2))
 number_a = food_pref.copy()
 number_a = {key: value.count(u"a") for key, value in number_a.iteritems()}
 print (u"number_a: {0}\n".format(number_a))
+
+# Create sets s2, s3, and s4 that contain the numbers from 0 to 20 that are
+# divisible by 2, 3, and 4
+
+# Do this with one set comprehension for each set
+s2 = {i for i in range(21) if i % 2 == 0}
+s3 = {i for i in range(21) if i % 3 == 0}
+s4 = {i for i in range(21) if i % 4 == 0}
+print (u"s2: {0}".format(s2))
+print (u"s3: {0}".format(s3))
+print (u"s4: {0}\n".format(s4))
