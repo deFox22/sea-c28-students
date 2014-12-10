@@ -107,8 +107,8 @@ def thank_you_amount(name):
 
 
 def compose_email(name, amount):
-    print (u"\nThank you %s for your generous donation in\n"
-           " the amount of $%.2f.\n\n--SavePenguins charity" % (name, amount))
+    print (u"\nThank you %s for your generous donation in"
+           "\nthe amount of $%.2f.\n\n--SavePenguins charity" % (name, amount))
     main_menu()
 
 
