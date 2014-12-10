@@ -21,3 +21,9 @@ print (u"hexidict1 {0}\n".format(hexidict1))
 # Do the previous entirely whith a dict comprehension
 hexidict2 = {i: hex(i) for i in range(16)}
 print (u"hexidict2 {0}\n".format(hexidict2))
+
+# Using the food_pref dictioanry: Make a dictionary using the same keys
+# but with the number of a's in each value
+number_a = food_pref.copy()
+number_a = {key: value.count(u"a") for key, value in number_a.iteritems()}
+print (u"number_a: {0}\n".format(number_a))
