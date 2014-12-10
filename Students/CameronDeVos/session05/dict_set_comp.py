@@ -38,3 +38,9 @@ s4 = {i for i in range(21) if i % 4 == 0}
 print (u"s2: {0}".format(s2))
 print (u"s3: {0}".format(s3))
 print (u"s4: {0}\n".format(s4))
+# Create a sequence that holds all three
+threeset = [{}, {}, {}]
+# Loop through sequence to build sets
+for x in range((len(threeset))):
+    threeset[x] = {i for i in range(21) if i % (x+2) == 0}
+print (u"threeset: {0}\n".format(threeset))
