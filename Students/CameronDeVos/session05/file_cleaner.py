@@ -24,3 +24,28 @@ def rewrite(filename):
     for line in clean_lines:
         f.write(line + "\n")
     f.close()
+
+if __name__ == '__main__':
+    while True:
+        try:
+            filename = sys.argv[1]
+        except IndexError:
+            print ("Please provide a file to be cleaned when calling script.")
+            break
+        filename = sys.argv[1]
+        choice = raw_input(u"\nTo clean the inputted file type '1'\n"
+                           "To copy the contents and create a clean_%s "
+                           "file type '2'\n"
+                           "--->  " % filename)
+        if choice == "1":
+            overwrite(filename)
+            print (u"File has been cleaned")
+            break
+        elif choice == "2":
+            rewrite(filename)
+            print (u"Copied the file and created"
+                   " a new file with clean contents.")
+            break
+        else:
+            print (u"Sorry, that is an invalid response.\n"
+                   "Please pick option '1' or '2'.")
