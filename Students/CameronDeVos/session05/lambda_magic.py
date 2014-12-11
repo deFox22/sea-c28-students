@@ -15,3 +15,10 @@ def function_builder(n):
     """
     func_list = [lambda x, y=i: x+y for i in range(n)]
     return func_list
+
+
+if __name__ == '__main__':
+    the_list = function_builder(4)
+    assert the_list[0](2) == 2
+    assert the_list[1](2) == 3
+    print (u"All Tests Pass")
