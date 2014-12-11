@@ -14,3 +14,13 @@ def overwrite(filename):
     for line in clean_lines:
         f.write(line + "\n")
     f.close()
+
+
+def rewrite(filename):
+    u"""Reads input file and creates new file with whitespace removed"""
+    f = codecs.open(filename).readlines()
+    clean_lines = map(string.strip, f)
+    f = codecs.open("clean_%s" % filename, "w")
+    for line in clean_lines:
+        f.write(line + "\n")
+    f.close()
