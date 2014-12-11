@@ -37,7 +37,7 @@ def rewrite_comp(filename):
     u"""Reads input file and creates new file with whitespace removed"""
     f = codecs.open(filename).readlines()
     clean_lines = [line.strip() + "\n" for line in f]
-    f = codecs.open("clean_comp_%s" % filename, 'w').writelines(clean_lines)f
+    f = codecs.open("clean_comp_%s" % filename, 'w').writelines(clean_lines)
 
 
 if __name__ == '__main__':
