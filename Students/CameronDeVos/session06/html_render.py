@@ -128,3 +128,10 @@ class Ul(Element):
 class Li(Element):
     u"""Element for the item in a list."""
     tag = u"li"
+
+
+class H(OneLineTag):
+    u"""One line tag for a header."""
+    def __init__(self, level, content, **kwargs):
+        OneLineTag.__init__(self, content, **kwargs)
+        self.tag = u"h%i" % level
