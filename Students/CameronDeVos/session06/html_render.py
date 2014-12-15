@@ -118,3 +118,13 @@ class A(OneLineTag):
 
     def __init__(self, link, content):
         OneLineTag.__init__(self, content, href=link)
+
+
+class Ul(Element):
+    u"""Element for an unordered list."""
+    tag = u"ul"
+
+
+class Li(Element):
+    u"""Element for the item in a list."""
+    tag = u"li"
