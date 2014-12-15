@@ -37,3 +37,18 @@ class Element(object):
                 file_out.write(unicode(item))
         file_out.write(u"\n" + indent)
         file_out.write(u"</%s>" % self.tag)
+
+
+class Body(Element):
+    u"""Element for a body."""
+    tag = u"body"
+
+
+class P(Element):
+    u"""Element for a paragraph."""
+    tag = u"p"
+
+
+class Head(Element):
+    u"""Element for a head."""
+    tag = u"head"
