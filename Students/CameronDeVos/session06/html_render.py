@@ -110,3 +110,11 @@ class Hr(SelfClosingTag):
 class LineBreak(SelfClosingTag):
     u""""Self closing tag for a line break."""
     tag = u"br"
+
+
+class A(OneLineTag):
+    u"""One line tag for an anchor (link)."""
+    tag = u"a "
+
+    def __init__(self, link, content):
+        OneLineTag.__init__(self, content, href=link)
