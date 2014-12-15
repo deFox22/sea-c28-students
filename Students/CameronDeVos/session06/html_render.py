@@ -39,6 +39,18 @@ class Element(object):
         file_out.write(u"</%s>" % self.tag)
 
 
+class Html(Element):
+    u"""Element for an HTML tag."""
+    tag = u"html"
+
+    # Overwrite the render method to add the '<!DOCTYPE html>'
+    def render(self, file_out, indent=u""):
+        u"""Render the Element."""
+        file_out.write(u"<!DOCTYPE html>")
+        # Call superclass render
+        Element.render(self, file_out, indent)
+
+
 class Body(Element):
     u"""Element for a body."""
     tag = u"body"
