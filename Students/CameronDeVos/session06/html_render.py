@@ -18,3 +18,22 @@ class Element(object):
         else:
             self.content = []
         self.attributes = kwargs
+
+    def append(self, a_string):
+        u"""Add addtional content to the Element"""
+        self.content.append(a_string)
+
+    def render(self, file_out, indent=u""):
+        u"""Render the Element with attibutes."""
+        file_out.write(u"\n%s<%s" % (indent, self.tag))
+        for key, value in self.attributes.items():
+            file_out.write(u" %s='%s'" % (key, value))
+        file_out.write(u">")
+        for item in self.content:
+            try:
+                item.render(file_out, indent + self.indent)
+            except AttributeError:
+                file_out.write(u"\n" + indent + self.indent)
+                file_out.write(unicode(item))
+        file_out.write(u"\n" + indent)
+        file_out.write(u"</%s>" % self.tag)
