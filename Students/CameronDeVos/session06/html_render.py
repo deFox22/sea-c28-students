@@ -100,3 +100,13 @@ class SelfClosingTag(Element):
         for key, value in self.attributes.items():
             file_out.write(u"%s='%s'" % (key, value))
         file_out.write(u"/>")
+
+
+class Hr(SelfClosingTag):
+    u"""Self closing tag for a horizontal rule."""
+    tag = u"hr"
+
+
+class LineBreak(SelfClosingTag):
+    u""""Self closing tag for a line break."""
+    tag = u"br"
