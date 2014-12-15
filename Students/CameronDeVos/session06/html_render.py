@@ -86,3 +86,17 @@ class OneLineTag(Element):
 class Title(OneLineTag):
     u"""Element for a title."""
     tag = u"title"
+
+
+class SelfClosingTag(Element):
+    u"""Element with a single tag and attributes, if any."""
+    def __init__(self, **kwargs):
+        self.attributes = kwargs
+
+    # Override the render method to render just the one tag and attributes.
+    def render(self, file_out, indent=u""):
+        u"""Render the Element"""
+        file_out.write(u"\n%s<%s" % (indent, self.tag))
+        for key, value in self.attributes.items():
+            file_out.write(u"%s='%s'" % (key, value))
+        file_out.write(u"/>")
