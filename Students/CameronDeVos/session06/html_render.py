@@ -81,3 +81,8 @@ class OneLineTag(Element):
             except AttributeError:
                 file_out.write(unicode(item))
         file_out.write(u"</%s>" % self.tag)
+
+
+class Title(OneLineTag):
+    u"""Element for a title."""
+    tag = u"title"
