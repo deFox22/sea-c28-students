@@ -135,3 +135,8 @@ class H(OneLineTag):
     def __init__(self, level, content, **kwargs):
         OneLineTag.__init__(self, content, **kwargs)
         self.tag = u"h%i" % level
+
+
+class Meta(SelfClosingTag):
+    u"""Self closing tag to add the meta to give your document an encoding."""
+    tag = u"meta"
