@@ -64,3 +64,20 @@ class P(Element):
 class Head(Element):
     u"""Element for a head."""
     tag = u"head"
+
+
+class OneLineTag(Element):
+    u"""Element that renders on one line."""
+    # Override the render method to render everything on one line.
+    def render(self, file_out, indent=u""):
+        u"""Render the Element."""
+        file_out.write(u"\n%s<%s" % (indent, self.tag))
+        for key, value in self.attributes.items():
+            file_out.write(u"%s='%s'" % (key, value))
+        file_out.write(u">")
+        for item in self.content:
+            try:
+                item.render(file_out)
+            except AttributeError:
+                file_out.write(unicode(item))
+        file_out.write(u"</%s>" % self.tag)
