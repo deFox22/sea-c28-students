@@ -1,0 +1,28 @@
+#!/usr/bin/env python
+"""code that tests the fibonacci, lucas, and sum_series functions
+defined in series.py
+Can be run with py.test
+"""
+
+from series import fibonacci
+from series import lucas
+from series import sum_series
+
+
+fibonacci_series = [
+    (0, 0),
+    (1, 1),
+    (2, 1),
+    (3, 2),
+    (4, 3),
+    (5, 5)
+    ]
+
+lucas_series = [
+    (0, 2),
+    (1, 1),
+    (2, 3),
+    (3, 4),
+    (4, 7),
+    (5, 11)
+    ]
