@@ -26,3 +26,9 @@ class Circle(object):
 
     def __str__(self):
         return "Circle with radius: %.6f" % self.radius
+
+    def __add__(self, c):
+        return Circle(self.radius + c.radius)
+
+    def __mul__(self, x):
+        return Circle(self.radius*x)
