@@ -20,3 +20,9 @@ class Circle(object):
 
     diameter = property(get_diameter, set_diameter)
     area = property(get_area)
+
+    def __repr__(self):
+        return "Circle(%s)" % self.radius
+
+    def __str__(self):
+        return "Circle with radius: %.6f" % self.radius
