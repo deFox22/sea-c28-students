@@ -35,3 +35,7 @@ class Circle(object):
 
     def __cmp__(self, c):
         return cmp(self.radius, c.radius)
+
+    @classmethod
+    def from_diameter(klass, diameter):
+        return klass(diameter/2.0)
