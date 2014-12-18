@@ -32,3 +32,6 @@ class Circle(object):
 
     def __mul__(self, x):
         return Circle(self.radius*x)
+
+    def __cmp__(self, c):
+        return cmp(self.radius, c.radius)
