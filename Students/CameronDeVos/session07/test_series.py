@@ -26,3 +26,10 @@ lucas_series = [
     (4, 7),
     (5, 11)
     ]
+
+
+def test_fibonacci():
+    u"""Test the fibonacci and sum_series functions with fibonacci series"""
+    for n, result in fibonacci_series:
+        assert fibonacci(n) == result
+        assert sum_series(n) == result
