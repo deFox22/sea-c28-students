@@ -33,3 +33,10 @@ def test_fibonacci():
     for n, result in fibonacci_series:
         assert fibonacci(n) == result
         assert sum_series(n) == result
+
+
+def test_lucas():
+    u"""Test the lucas and sum_series functions with lucas series"""
+    for n, result in lucas_series:
+        assert lucas(n) == result
+        assert sum_series(n, 2, 1) == result
