@@ -9,4 +9,4 @@ import codecs
 
 def rot13_encrypt(text):
     u"""Take a text statement and return it with a rot-13 cypher"""
-    return codecs.encode(text, "rot-13")
+    return codecs.encode(text, u"rot-13")

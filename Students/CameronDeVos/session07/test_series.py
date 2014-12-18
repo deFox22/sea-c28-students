@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""code that tests the fibonacci, lucas, and sum_series functions
+u"""code that tests the fibonacci, lucas, and sum_series functions
 defined in series.py
 Can be run with py.test
 """

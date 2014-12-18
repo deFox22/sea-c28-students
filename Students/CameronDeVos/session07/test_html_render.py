@@ -20,6 +20,7 @@ def render(page, filename):
     codecs.open(filename, 'w', encoding="utf-8").write(f.read())
     return f.read()
 
+
 class Test_html_render(unittest.TestCase):
     u""" Unittest Class to test the html_render file."""
     def test_step8(self):
