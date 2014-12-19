@@ -53,5 +53,23 @@ class Test_html_render(unittest.TestCase):
         expected = u"<!DOCTYPE html>\n<html>\n    <body>\n    </body>\n</html>"
         self.assertEquals(expected, actual)
 
+    def test_p(self):
+        u"""Test that p is constructed."""
+        page = hr.Html()
+        p = hr.P()
+        page.append(p)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <p>\n    </p>\n</html>"
+        self.assertEquals(expected, actual)
+
+    def test_head(self):
+        u"""Test that head is constructed."""
+        page = hr.Html()
+        head = hr.Head()
+        page.append(head)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <head>\n    </head>\n</html>"
+        self.assertEquals(expected, actual)
+
 if __name__ == '__main__':
     unittest.main()
