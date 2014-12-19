@@ -9,3 +9,11 @@ def intsum():
     while True:
         yield sum(range(i))
         i += 1
+
+
+def doubler():
+    u"""Generate the double of the previous value."""
+    value = 1
+    while True:
+        yield value
+        value *= 2
