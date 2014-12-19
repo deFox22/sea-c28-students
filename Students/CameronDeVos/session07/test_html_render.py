@@ -7,7 +7,7 @@ import html_render as hr
 
 
 # writing the file out:
-def render(page, filename):
+def render(page):
     u"""
     render the tree of elements
     This uses cSstringIO to render to memory, then dump to console and
@@ -20,8 +20,22 @@ def render(page, filename):
 
 
 class Test_html_render(unittest.TestCase):
-    u""" Unittest Class to test the html_render file."""
+    u"""Unittest Class to test the html_render file."""
 
+    def test_element_tag(self):
+        u"""Test that tag is correctly constructed"""
+        page = hr.Element(u"TagsTagsTags")
+        actual = render(page)
+        expected = u"\n<html>\n    TagsTagsTags\n</html>"
+        self.assertEquals(expected, actual)
+
+    def test_append(self):
+        u"""Test that strings are append to element."""
+        page = hr.Element(u"String One")
+        page.append(u"String Two")
+        actual = render(page)
+        expected = u"\n<html>\n    String One\n    String Two\n</html>"
+        self.assertEquals(expected, actual)
 
 if __name__ == '__main__':
     unittest.main()
