@@ -105,5 +105,34 @@ class Test_html_render(unittest.TestCase):
                    "    </head>\n</html>"
         self.assertEquals(expected, actual)
 
+    def test_selfclosingtag(self):
+        u"""Test that self closing tag is constructed."""
+        selfclosingtag = hr.SelfClosingTag()
+        actual = render(selfclosingtag)
+        expected = u"\n<html/>"
+        self.assertEquals(expected, actual)
+
+    def test_hr(self):
+        u"""Test that horizontal rule is constructed."""
+        page = hr.Html()
+        body = hr.Body()
+        body.append(hr.Hr())
+        page.append(body)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <body>\n        <hr/>\n"\
+                   "    </body>\n</html>"
+        self.assertEquals(expected, actual)
+
+    def test_linebreak(self):
+        u"""Test that line break is constructed."""
+        page = hr.Html()
+        body = hr.Body()
+        body.append(hr.LineBreak())
+        page.append(body)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <body>\n        <br/>\n"\
+                   "    </body>\n</html>"
+        self.assertEquals(expected, actual)
+
 if __name__ == '__main__':
     unittest.main()
