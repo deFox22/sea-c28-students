@@ -134,5 +134,46 @@ class Test_html_render(unittest.TestCase):
                    "    </body>\n</html>"
         self.assertEquals(expected, actual)
 
+    def test_a(self):
+        u"""Test that anchor is constructed."""
+        page = hr.Html()
+        body = hr.Body()
+        body.append(hr.A(u"http://google.com", "link"))
+        page.append(body)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <body>\n"\
+                   "        <a href='http://google.com'>link</a >\n"\
+                   "    </body>\n</html>"
+        self.assertEquals(expected, actual)
+
+    def test_ul(self):
+        u"""Test that unordered list is constructed."""
+        page = hr.Html()
+        body = hr.Body()
+        body.append(hr.Ul())
+        page.append(body)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <body>\n        <ul>\n"\
+                   "        </ul>\n    </body>\n</html>"
+        self.assertEquals(expected, actual)
+
+    def test_li(self):
+        u"""Test that list item is constructed."""
+        page = hr.Html()
+        body = hr.Body()
+        list = hr.Ul()
+        list.append(hr.Li(u"The first item in a list"))
+        list.append(hr.Li(u"This is the second item", style="color: red"))
+        body.append(list)
+        page.append(body)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <body>\n        <ul>\n"\
+                   "            <li>\n"\
+                   "                The first item in a list\n"\
+                   "            </li>\n            <li style='color: red'>\n"\
+                   "                This is the second item\n"\
+                   "            </li>\n        </ul>\n    </body>\n</html>"
+        self.assertEquals(expected, actual)
+
 if __name__ == '__main__':
     unittest.main()
