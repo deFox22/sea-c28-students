@@ -71,5 +71,20 @@ class Test_html_render(unittest.TestCase):
         expected = u"<!DOCTYPE html>\n<html>\n    <head>\n    </head>\n</html>"
         self.assertEquals(expected, actual)
 
+    def test_Element_attributes(self):
+        u"""Test that attributes are assigned to elements."""
+        page = hr.Html()
+        body = hr.Body(id=u"TheList", style=u"color: red")
+        body.append(hr.P(u"Paragraph", style=u"text-align: center;"
+                         " font-style: oblique;"))
+        page.append(body)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n"\
+                   "    <body style='color: red' id='TheList'>\n"\
+                   "        <p style='text-align: center;"\
+                   " font-style: oblique;'>\n            Paragraph\n"\
+                   "        </p>\n    </body>\n</html>"
+        self.assertEquals(expected, actual)
+
 if __name__ == '__main__':
     unittest.main()
