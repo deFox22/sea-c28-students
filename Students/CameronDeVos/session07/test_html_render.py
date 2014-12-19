@@ -86,5 +86,24 @@ class Test_html_render(unittest.TestCase):
                    "        </p>\n    </body>\n</html>"
         self.assertEquals(expected, actual)
 
+    def test_onelinetag(self):
+        u"""Test that onelinetag renders to one line."""
+        onelinetag = hr.OneLineTag()
+        actual = render(onelinetag)
+        expected = u"\n<html></html>"
+        self.assertEquals(expected, actual)
+
+    def test_title(self):
+        u"""Test that title is constructed."""
+        page = hr.Html()
+        head = hr.Head()
+        head.append(hr.Title(u"PythonClass"))
+        page.append(head)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <head>\n"\
+                   "        <title>PythonClass</title>\n"\
+                   "    </head>\n</html>"
+        self.assertEquals(expected, actual)
+
 if __name__ == '__main__':
     unittest.main()
