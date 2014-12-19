@@ -17,3 +17,12 @@ def doubler():
     while True:
         yield value
         value *= 2
+
+
+def fib():
+    u"""Generate the fibonacci series."""
+    previous = 0
+    current = 1
+    while True:
+        yield current
+        previous, current = current, current + previous
