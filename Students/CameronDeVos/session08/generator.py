@@ -26,3 +26,26 @@ def fib():
     while True:
         yield current
         previous, current = current, current + previous
+
+
+def prime():
+    u"""Generate the prime numbers."""
+    number = 2
+    while True:
+        if prime_check(number):
+            yield number
+        number += 1
+
+
+def prime_check(number):
+    u"""Take in a number and check if it is a prime number."""
+    if number > 1:
+        if number == 2:
+            return True
+        if number % 2 == 0:
+            return False
+        for num in range(3, int(math.sqrt(number)+1), 2):
+            if number % num == 0:
+                return False
+        return True
+    return False
