@@ -175,5 +175,37 @@ class Test_html_render(unittest.TestCase):
                    "            </li>\n        </ul>\n    </body>\n</html>"
         self.assertEquals(expected, actual)
 
+    def test_h(self):
+        u"""Test that header is constructed."""
+        page = hr.Html()
+        body = hr.Body()
+        body.append(hr.H(2, u"PythonClass - Class 7"))
+        page.append(body)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <body>\n"\
+                   "        <h2>PythonClass - Class 7</h2>\n"\
+                   "    </body>\n</html>"
+        self.assertEquals(expected, actual)
+
+    def test_meta(self):
+        u"""Test that meta is constructed."""
+        page = hr.Html()
+        head = hr.Body()
+        head.append(hr.Meta(charset=u"UTF-8"))
+        page.append(head)
+        actual = render(page)
+        expected = u"<!DOCTYPE html>\n<html>\n    <body>\n"\
+                   "        <metacharset='UTF-8'/>\n    </body>\n</html>"
+        self.assertEquals(expected, actual)
+
+# Previous soulution idea, leaving it in just for reference.
+
+#        render(page, u"test_html_output8.html")
+#        with open("test_html_output8.html", "r") as myfile:
+#            actual = myfile.readlines()
+#        with open("expected_test_html_output8.html", "r") as exfile:
+#            expected = exfile.readlines()
+#        self.assertEquals(expected, actual)
+
 if __name__ == '__main__':
     unittest.main()
