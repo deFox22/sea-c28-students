@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
 import math
 
 
@@ -49,3 +50,11 @@ def prime_check(number):
                 return False
         return True
     return False
+
+if __name__ == '__main__':
+    our_prime = prime()
+    assert next(our_prime) == 2
+    assert next(our_prime) == 3
+    assert next(our_prime) == 5
+    assert next(our_prime) == 7
+    print (u"Generator prime test success")
